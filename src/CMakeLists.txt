@@ -19,7 +19,7 @@ set(TACO_SOURCES ${TACO_SOURCES} ir_tags.cpp)
 
 add_definitions(${TACO_DEFINITIONS})
 include_directories(${TACO_SRC_DIR})
-add_library(taco ${TACO_LIBRARY_TYPE} ${TACO_HEADERS} ${TACO_SOURCES})
+cuda_add_library(taco ${TACO_LIBRARY_TYPE} ${TACO_HEADERS} ${TACO_SOURCES})
 if (CUDA)
   include_directories(${CUDA_INCLUDE_DIRS})
   target_link_libraries(taco INTERFACE ${CUDA_TOOLKIT_ROOT_DIR}/lib64/libcudart.so)

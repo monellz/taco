@@ -32,7 +32,7 @@ string get_default_CUDA_compiler_flags() {
   cudaDeviceProp prop;
   cudaGetDeviceProperties(&prop, 0);
   string computeCap = to_string(prop.major) + to_string(prop.minor);
-  return "-w -O3 -Xcompiler \"-fPIC -shared -ffast-math -O3\" --generate-code arch=compute_" + computeCap + ",code=sm_" + computeCap;
+  return "-g -w -O3 -Xcompiler \"-fPIC -shared -ffast-math -O3\" --generate-code arch=compute_" + computeCap + ",code=sm_" + computeCap;
 #else
   taco_ierror;
   return "";
